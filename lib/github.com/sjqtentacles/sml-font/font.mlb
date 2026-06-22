@@ -1,0 +1,10 @@
+(* MLB for the vendored sml-font library: the sml-raster core (which itself
+ * pulls in sml-image + sml-inflate + sml-color) plus the font sources.
+ * Consumers reference this file.
+ *
+ * The dependency .mlb is brought in WITHOUT a `local` wrapper so consumers can
+ * `open Image`/`Raster` alongside Font. *)
+$(SML_LIB)/basis/basis.mlb
+../sml-raster/sources.mlb
+font.sig
+font.sml

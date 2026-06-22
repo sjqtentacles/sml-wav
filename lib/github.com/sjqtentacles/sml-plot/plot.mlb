@@ -1,0 +1,12 @@
+(* MLB for the vendored sml-plot library: the sml-font core (which itself pulls
+ * in sml-raster + sml-image + sml-inflate + sml-color), the embedded bundled
+ * font, and the plot sources.  Used only by the sml-wav example/demo build to
+ * render the waveform and FFT spectrum to PNG.
+ *
+ * The dependency .mlb is brought in WITHOUT a `local` wrapper so the demo can
+ * `open Image`/`Plot` alongside Wav and Fft. *)
+$(SML_LIB)/basis/basis.mlb
+../sml-font/font.mlb
+font_data.sml
+plot.sig
+plot.sml

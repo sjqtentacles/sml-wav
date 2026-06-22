@@ -1,0 +1,9 @@
+(* MLB for the sml-wav library: the vendored sml-fft core (which itself pulls
+ * in sml-complex) plus the wav sources.  Consumers reference this file.
+ *
+ * The dependency .mlb is brought in WITHOUT a `local` wrapper so consumers can
+ * `open Fft`/`Complex` alongside Wav. *)
+$(SML_LIB)/basis/basis.mlb
+../lib/github.com/sjqtentacles/sml-fft/fft.mlb
+wav.sig
+wav.sml

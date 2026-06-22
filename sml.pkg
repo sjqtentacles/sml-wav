@@ -1,0 +1,6 @@
+package github.com/sjqtentacles/sml-wav
+
+require {
+  github.com/sjqtentacles/sml-fft
+  github.com/sjqtentacles/sml-complex
+}

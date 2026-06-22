@@ -1,0 +1,15 @@
+(* Test executable basis: the wav library (which pulls in the vendored sml-fft
+ * + sml-complex stack) plus the harness and runner. *)
+$(SML_LIB)/basis/basis.mlb
+
+../src/wav.mlb
+
+harness.sml
+support.sml
+test_io.sml
+test_osc.sml
+test_dsp.sml
+test_adsr.sml
+test_filter.sml
+entry.sml
+main.sml

@@ -1,0 +1,10 @@
+(* MLB for the vendored sml-fft library: the sml-complex core plus the FFT
+ * sources.  Consumers reference this file.
+ *
+ * The dependency .mlb is brought in WITHOUT a `local` wrapper so that
+ * consumers (the wav core, tests, examples) can `open Complex` alongside
+ * Fft. *)
+$(SML_LIB)/basis/basis.mlb
+../sml-complex/sources.mlb
+fft.sig
+fft.sml

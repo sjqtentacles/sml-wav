@@ -1,0 +1,8 @@
+(* Example/demo basis: the wav library (vendored sml-fft + sml-complex) plus the
+ * vendored sml-plot stack used to render the waveform and FFT spectrum PNGs. *)
+$(SML_LIB)/basis/basis.mlb
+
+../src/wav.mlb
+../lib/github.com/sjqtentacles/sml-plot/plot.mlb
+
+demo.sml
