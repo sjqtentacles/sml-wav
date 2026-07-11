@@ -16,17 +16,13 @@ struct
   fun approx (a, b) = Real.abs (a - b) <= eps
   fun approxT tol (a, b) = Real.abs (a - b) <= tol
 
-  fun rstr x = Real.fmt (StringCvt.GEN (SOME 12)) x
-
-  fun checkReal name (expected, actual) =
-    H.check
-      (name ^ " (expected " ^ rstr expected ^ ", got " ^ rstr actual ^ ")")
-      (approx (expected, actual))
+  (* Delegate to the harness's epsilon comparisons. Computed values must not
+     appear in pass messages: their formatting (Real.fmt/toString) is not
+     byte-identical across MLton and Poly/ML. *)
+  fun checkReal name (expected, actual) = H.checkReal name (expected, actual)
 
   fun checkRealTol tol name (expected, actual) =
-    H.check
-      (name ^ " (expected " ^ rstr expected ^ ", got " ^ rstr actual ^ ")")
-      (approxT tol (expected, actual))
+    H.checkRealTol tol name (expected, actual)
 
   (* Elementwise real-array comparison within eps (lengths must match). *)
   fun approxArr tol (xs, ys) =
