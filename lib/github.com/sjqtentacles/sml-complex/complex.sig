@@ -41,6 +41,36 @@ sig
   val sqrt : t -> t
   val pow  : t * t -> t
 
+  (* Trigonometric functions, defined for complex arguments via the standard
+     identities (e.g. sin (a + bi) = sin a cosh b + i cos a sinh b). *)
+  val sin : t -> t
+  val cos : t -> t
+  val tan : t -> t
+
+  (* Hyperbolic functions (sinh (a + bi) = sinh a cos b + i cosh a sin b). *)
+  val sinh : t -> t
+  val cosh : t -> t
+  val tanh : t -> t
+
+  (* Principal-branch inverse trigonometric functions.
+     asin z = -i ln (iz + sqrt (1 - z^2)); acos z = pi/2 - asin z;
+     atan z = (i/2)(ln (1 - iz) - ln (1 + iz)). *)
+  val asin : t -> t
+  val acos : t -> t
+  val atan : t -> t
+
+  (* Principal-branch inverse hyperbolic functions.
+     asinh z = ln (z + sqrt (z^2 + 1)); acosh z = ln (z + sqrt (z^2 - 1));
+     atanh z = (1/2) ln ((1 + z)/(1 - z)). *)
+  val asinh : t -> t
+  val acosh : t -> t
+  val atanh : t -> t
+
+  (* `nthRoots (z, n)` returns the n distinct complex n-th roots of z, i.e.
+     the solutions w of w^n = z, ordered by increasing argument starting from
+     the principal root. Requires n >= 1 (raises Domain otherwise). *)
+  val nthRoots : t * int -> t list
+
   (* Polar form. `theta` is in radians. *)
   val fromPolar : {r : real, theta : real} -> t
   val toPolar   : t -> {r : real, theta : real}
