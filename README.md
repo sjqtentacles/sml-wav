@@ -1,5 +1,7 @@
 # sml-wav
 
+[![CI](https://github.com/sjqtentacles/sml-wav/actions/workflows/ci.yml/badge.svg)](https://github.com/sjqtentacles/sml-wav/actions/workflows/ci.yml)
+
 WAV audio in pure Standard ML — read and write [RIFF/PCM](https://en.wikipedia.org/wiki/WAV)
 `.wav` files, plus a small synthesis and DSP toolkit: `sine`/`saw`/`square`
 oscillators, an ADSR envelope, RBJ biquad filters, and amplitude helpers. Built
